@@ -10,6 +10,7 @@
     var score = 0;
     var missed = 0;
     var radius = 0;
+    var final;
     var firstRun = false;
     var target;
     var id;
@@ -29,6 +30,7 @@
        circSpawnRate = document.getElementById("timerSet").value;
        radius = document.getElementById("radiusSet").value;
        cycles = document.getElementById("cycleSet").value;
+       final = cycles;
        document.querySelector('#settings').innerHTML = ""; //TODO MAKE DEFAULT TIMER MISSES AND HITS DISPLAY
        id = setInterval(frame, (circSpawnRate * 1000)); // set interval in 1/1000 of a second
    }
@@ -47,7 +49,8 @@
     function frame(){
         if (cycles <= 0) {
             clearInterval(id);
-            document.write("Game Over. You got " + score + " hits and " + missed + " misses.");
+            alert("Game Over. You hit " + score + " out of " + final + " targets, and missed " + missed + " times.");
+			window.location.reload(); 
         }
         else {
             if (!firstRun)
@@ -69,7 +72,7 @@
     }
 
     function updateTimer(){
-        document.querySelector('#timer').innerHTML = "Time:    " + parseInt(circSpawnRate * cycles + 1);
+        document.querySelector('#timer').innerHTML = "Time:    " + parseInt(circSpawnRate * cycles);
     }
 
     function increaseScore(){

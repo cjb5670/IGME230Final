@@ -3,21 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <title>AccuShot! Main</title>
+	<link href="https://fonts.googleapis.com/css?family=Black+Ops+One" rel="stylesheet">
     <link rel="stylesheet" href="game.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="game.js"></script>
 </head>
 <body>
+	<h1 id="title"><center><u>AccuShot!</u></center></h1>
     <div id="settings">
-        <p>How long (in seconds) do you want each circle to be on screen? <input id="timerSet" type="number" name="timerSet" value = ".5"> </p>
-        <p>What would you like the radius of your circle to be (in pixels)? <input id="radiusSet" type="number" name="radiusSet" value = "150"></p>
-        <p>How many circles would you like there to be? <input id="cycleSet" type="number" name="cycleSet" value = "10"></p>
+        <p>How long (in seconds) do you want each circle to be on screen? <input id="timerSet" type="number" name="timerSet" value = "1"> </p>
+			
+        <p>What would you like the radius of your circle to be (in pixels)? <input id="radiusSet" type="number" name="radiusSet" value = "150"> </p>
+			
+        <p>How many circles would you like there to be? <input id="cycleSet" type="number" name="cycleSet" value = "5"> </p>
 
         <button onclick="begin()">Play!</button>
     </div>
-<div id="timer">Time:    0</div>
-<div id="score">Hits:    0</div>
-<div id="missed">Misses:  0</div>
+	
+ </br>
+ <div id="timer">Time:    0</div> 
+ <div id="score">Hits:    0</div> 
+ <div id="missed">Misses:  0</div>
+ </br>
+ 
  <div id="container">
  <div id="circle"></div>
  </div>
